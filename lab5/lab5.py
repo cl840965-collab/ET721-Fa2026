@@ -53,7 +53,7 @@ class Car():
         self.s = int(input("How many seats in this car: "))
         return self.s
     def display(self):
-        print("Car 1 = ", self.c1, "Has ", self.firstcar(), " seats", "Car 2 = ", self.c2, "Has ", self.secondcar(), " Seats", self.defaultcolor)
+        print("Car 1", self.c1, "Has", self.firstcar(), "seats", self.maxspeed, self.mileage, "Car 2", self.c2, "Has", self.secondcar(), " Seats", self.defaultcolor)
 w = Car("Rent", "Let")
 Car.defaultcolor = "white"
 w.display()
