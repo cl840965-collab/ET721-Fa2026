@@ -52,8 +52,16 @@ class Car():
     def secondcar(self):
         self.s = int(input("How many seats in this car: "))
         return self.s
+    def maxmile1(self, max, mile):
+        self.m = max
+        self.mi = mile
+    def maxmile2(self, max, mile):
+        self.m2 = max
+        self.mi2 = mile
     def display(self):
-        print("Car 1", self.c1, "Has", self.firstcar(), "seats", self.maxspeed, self.mileage, "Car 2", self.c2, "Has", self.secondcar(), " Seats", self.defaultcolor)
+        print("Car 1:", self.c1, "has", self.firstcar(), "seats", "with a max mps of", self.m, "and mileage of",self.mi, "\n", "Car 2:", self.c2, "has", self.secondcar(), "seats", "with a max mps of", self.m2, "and mileage of", self.mi2)
 w = Car("Rent", "Let")
 Car.defaultcolor = "white"
+w.maxmile1(200, 50000)
+w.maxmile2(180, 75000)
 w.display()
