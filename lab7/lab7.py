@@ -70,11 +70,32 @@ f_burnley_v_manc = games1[games1['AwayTeam'].str.contains('Burnley')]
 manc_v_burnley = games1[games1['HomeTeam'].str.contains('Man City')]
 f_manc_v_burnley = games1[games1['AwayTeam'].str.contains('Man City')]
 
-home_avg_plus = burnley_v_manc['FTHG'].mean()
-home_avg_pts = burnley_v_manc['FTHG'].mean()
-away_avg_plus = f_manc_v_burnley['FTAG'].mean()
-away_avg_plus = manc_v_burnley['FTAG'].mean()
-print(f"Burnley home average {home_avg_plus}")
-print(f"Burnley home average {away_avg_plus}")
-print(f"Man City home average {home_avg_pts}")
-print(f"Man City away average {away_avg_plus}")
+b_home_avg_plus = burnley_v_manc['FTHG'].mean()
+b_away_avg_pts = f_burnley_v_manc['FTAG'].mean()
+mc_away_avg_pts = f_manc_v_burnley['FTAG'].mean()
+mc_home_avg_plus = manc_v_burnley['FTHG'].mean()
+print(f"Burnley home average {b_home_avg_plus}")
+print(f"Burnley away average {b_away_avg_pts}")
+print(f"Man City home average {mc_home_avg_plus}")
+print(f"Man City away average {mc_away_avg_pts}")
+
+import matplotlib.pyplot as plt
+metrics = ['FTAG', 'FTHG']
+home_values = ['b_home_avg_plus', 'mc_home_avg_plus']
+away_values = ['b_away_avg_pts', 'mc_away_avg_pts']
+
+x = range(len(metrics))
+bar_width = 0.35
+
+plt.figure(figsize=(8, 5))
+plt.bar([i - bar_width/2 for i in x], home_values, width = bar_width, label='Home', color='skyblue')
+plt.bar([i + bar_width/2 for i in x], away_values, width = bar_width, label='Away', color='orange')
+
+plt.xticks(x, metrics)
+plt.title('Burnley vs Man City — Home vs Away Comparison')
+plt.ylabel('Average Value')
+plt.legend()
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show(block=True)
+input("Press Enter to close...")
