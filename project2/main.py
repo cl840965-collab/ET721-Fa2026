@@ -1,4 +1,3 @@
-# Improved Connect 4 Game
 
 class Connect4:
     ROWS = 6
@@ -36,25 +35,25 @@ class Connect4:
         # Horizontal check
         for row in range(self.ROWS):
             for col in range(self.COLS - 3):
-                if all(self.board[row][col + i] == player for i in range(2)):
+                if all(self.board[row][col + i] == player for i in range(4)):
                     return True
 
         # Vertical check
-        for row in range(self.ROWS - 1):
+        for row in range(self.ROWS - 3):
             for col in range(self.COLS):
-                if all(self.board[row + i][col] == player for i in range(2)):
+                if all(self.board[row + i][col] == player for i in range(4)):
                     return True
 
         # Diagonal (down-right)
         for row in range(self.ROWS - 3):
             for col in range(self.COLS - 3):
-                if all(self.board[row + i][col + i] == player for i in range(2)):
+                if all(self.board[row + i][col + i] == player for i in range(4)):
                     return True
 
         # Diagonal (up-right)
         for row in range(3, self.ROWS):
             for col in range(self.COLS - 3):
-                if all(self.board[row - i][col + i] == player for i in range(2)):
+                if all(self.board[row - i][col + i] == player for i in range(4)):
                     return True
 
         return False
