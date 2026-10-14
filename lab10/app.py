@@ -13,7 +13,12 @@ def index():
 
 @app.route('/about')
 def about():
-    return render_template("about.html")
+    images = [
+        "static/img/photo(1).png",
+        "static/img/photo(2).png",
+        "static/img/photo(3).jpg"
+    ]
+    return render_template("about.html", images=images)
 @app.route('/quotes')
 def quotes():
     return redirect(url_for('index'))
