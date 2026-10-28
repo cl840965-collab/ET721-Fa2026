@@ -2,6 +2,7 @@
 {% block title %} My Block {% endblock %}
 {% block msg %} Claudio Lopez Blog {%endblock%}
 {%block content%}
+    <h2 class="subtitle">Add a New Blog</h2>
     <form method="POST" action="/add_blog">
         <input type="text" name="username" placeholder="Type username" required>
         <input type="email" name="email" placeholder="Type your email..." required>

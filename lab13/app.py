@@ -32,6 +32,32 @@ def blogs():
 
     return render_template('blogs.html', blogs=data)
 
+@app.route('/add_blog', methods=['GET', 'POST'])
+def add_blog():
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['content']
+        username = request.form['username']
+        email = request.form['email']
+
+        connection = get_db_connection()
+        try:
+            cursor = connection.cursor()
+            try:
+                cursor.execute("INSERT INTO users(username, email) VALUES (%s, %s)",(username, email))
+                connection.commit()
+
+                user_id = cursor.lastrowid
+
+                cursor.execute("INSERT INTO blog(user_id, title, content) VALUES (%s, %s, %s)",(user_id, title, content))
+                connection.commit()
+            finally:
+                cursor.close()
+        finally:
+            connection.close()
+
+        return redirect(url_for('blogs'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
