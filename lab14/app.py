@@ -7,7 +7,7 @@ items = {}
 @app.route('/')
 def home():
     return render_template("index.html")
-@app.route('/item', methods = ["POST"])
+@app.route('/items', methods = ["POST"])
 def create_item():
     data = request.get_json()
     item_id = str(len(items)+1)
@@ -16,5 +16,23 @@ def create_item():
 @app.route('/items', methods = ["GET"])
 def get_items():
     return jsonify(items)
+@app.route('/items/<item_id>', methods = ['GET', 'PUT', 'DELETE'])
+def handle_item(item_id):
+    item = items.get(item_id)
+    if request.method == 'GET':
+        if not item:
+            return jsonify({'Error' : 'Item not found'}), 404
+
+        return jsonify(item)
+    elif request.method == 'PUT':
+        if not item:
+            return render_template('error.html', message = "NOT FOUND", item = item), 404
+        data = request.get_json()
+        if not data: 
+            return jsonify({'error' : 'Invalid input'})
+        items[item_id] = data
+        return render_template('update.html', item_id = item_id, item = data)
+    
+
 if __name__ == "__main__":
     app.run(debug=True)
