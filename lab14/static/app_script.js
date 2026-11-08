@@ -22,13 +22,14 @@ async function loaditems() {
     const data = await res.json()
 
     const list = document.querySelector('.itemslist')
+    list.innerHTML = ""
 
     for(const id in data){
         const item = data[id]
         const li = document.createElement('li')
         li.innerHTML = `ID = ${id}, name = ${item.name}, price = ${item.price}
         <button onclick = "showupdatedform('${id}', '${item.name}', '${item.price}')"> Update </button>
-        <button onclick = "deleteditem("${id})"> Delete </button>
+        <button onclick = "deleteditem('${id}')"> Delete </button>
         `
         list.appendChild(li)
     }
@@ -52,4 +53,11 @@ async function updateItems() {
     const html = await res.text()
     document.body.innerHTML = html
 
+}
+async function deleteditem(id) {
+    const res = await fetch(`http://127.0.0.1:5000/items/${id}`, {
+    method: "DELETE",
+    })
+    const html = await res.text()
+    document.body.innerHTML = html
 }

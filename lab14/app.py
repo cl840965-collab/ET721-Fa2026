@@ -26,12 +26,17 @@ def handle_item(item_id):
         return jsonify(item)
     elif request.method == 'PUT':
         if not item:
-            return render_template('error.html', message = "NOT FOUND", item = item), 404
+            return render_template('error.html', message = "NOT FOUND"), 404
         data = request.get_json()
         if not data: 
             return jsonify({'error' : 'Invalid input'})
         items[item_id] = data
         return render_template('update.html', item_id = item_id, item = data)
+
+    elif request.method == "DELETE":
+        deleted_item = items.pop(item_id)
+        return render_template('deleted.html', item_id = item_id,
+        deleted_item = deleted_item)
     
 
 if __name__ == "__main__":

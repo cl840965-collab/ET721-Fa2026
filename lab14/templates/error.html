@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1 class="title">Error 404</h1>
+
+    <h2>{{ message }}</h2>
+
+    <p>The requested item could not be found.</p>
+
+    <a href="{{ url_for('home') }}">Back Home</a>
+
+</body>
+</html>
