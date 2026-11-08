@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head><title>Delete Item</title></head>
+<head>
+    <title>Delete Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
 <body>
-    <h1>Item Deleted</h1>
-    <p>ID: {{ item_id }}</p>
-    <p>Deleted Value: {{ deleted_item }}</p>
-    <a href="{{url_for('home')}}">Back to Template</a>
+    <div>
+        <h1 class="title">Item Deleted</h1>
+        <p>ID: {{ item_id }}</p>
+        <p>Deleted Value: {{ deleted_item }}</p>
+        <a href="{{url_for('home')}}">Back to Template</a>
+    </div>
 </body>
 </html>
