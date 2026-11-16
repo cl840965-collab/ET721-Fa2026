@@ -1,0 +1,33 @@
+*{box-sizing: border-box;}
+.maincontainer{
+    width: 900px;
+    margin: 3rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px grey;
+}
+.title{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+#taskInput{
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.btnaddtask{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btnaddtask:hover{
+    background-color: #ff0000;
+    font-weight: bold;
+}
