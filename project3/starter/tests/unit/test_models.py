@@ -20,7 +20,7 @@ def test_calculateTotalFruits_withFruitsList_returnsCorrectFruitCount():
     assert FruitMetrics.total_fruits(fruits) == 2
 
 def test_calculateAverageQuantity_withFruitsList_returnsCorrectAverage():
-    """
+    """tes
     Test the calculation of the average quantity of fruits in an inventory.
     Checks if the average_quantity method computes the correct average.
     """

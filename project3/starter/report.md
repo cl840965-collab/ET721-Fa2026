@@ -1,13 +1,14 @@
-Student’s Name 
-Professor’s Name
-Class Number
-Date
+Claudio Lopez  
+Professor’s Wu
+ET721
+11.15.2026
 
 # Report: The Benefits of Comprehensive Testing in Software Development
 
 ## Before and After: Results Summary
 
 * What was the initial test coverage? 
+    The inital code withing test_models was asserting/testing if we were able to POST things into the dict 'Fruits', aka making an object in Fruits class. Another test included the calculation of total fruits method inside the 'FruitMetrics' class. 
 * What is the final test coverage you were able to achieve? 
 * How many tests did you end up having?
 
