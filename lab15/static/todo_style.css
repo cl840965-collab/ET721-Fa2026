@@ -1,33 +1,59 @@
 *{box-sizing: border-box;}
 .maincontainer{
     width: 900px;
-    margin: 3rem;
-    background-color: white;
+    margin: 3rem auto;
+    background-color: #f4f4f4;
     padding: 2rem;
     border-radius: 5px;
-    box-shadow: 0 0 10px grey;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
 }
 .title{
     text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
+    color: #333;
+    margin-bottom: 2rem;
 }
-#taskInput{
+#taskinput{
     width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
+    padding: 1rem;
+    font-size: 1.3rem;
+    border: none;
     border-radius: 5px;
 }
 .btnaddtask{
-    background-color: #007bff;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+    background-color: darkblue;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
     cursor: pointer;
 }
 .btnaddtask:hover{
-    background-color: #ff0000;
+    background-color: crimson;
+    font-weight: bold;
+}
+.task_item{
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+#taskList{
+    list-style: none;
+    padding-left: 0.5rem;
+    margin-top: 2rem;
+    background-color: darkblue;
+}
+.btndeletetask{
+    float: right;
+    color: crimson;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: white;
+}
+.btndeletetask:hover{
+    filter: opacity(0.6);
+    transform: scale(1.1);
     font-weight: bold;
 }
