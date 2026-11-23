@@ -1,0 +1,18 @@
+*{box-sizing:border-box;}
+img{width:100%;display:block;}
+body{font-family:Arial,sans-serif;margin:0;padding:0;background:#f4f4f4;}
+.title{font-size:24px;font-weight:bold;margin:20px 0;text-align:center;color:#333;}
+#uploadForm{width:300px;margin:0 auto;padding:20px;background-color:#fff;border-radius:5px;box-shadow:0 0 10px rgba(0,0,0,0.1);}
+#uploadForm input[type="file"]{display:block;margin:10px 0;}
+#uploadForm button{background:#28a745;color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;}
+#uploadForm button:hover{background:#218838;}
+#preview{margin-top:20px;text-align:center;}
+#imagePreview{max-width:100%;border:1px solid #ddd;border-radius:5px;padding:5px;background:#fff;}
+#imageupload{margin-top:20px;text-align:center;}
+#imageInput, .btnupload{font-size:16px; color:#333; padding:10px; border:1px solid #ccc; border-radius:5px; width:100%; box-sizing:border-box;}
+#imageInput::file-selector-button, .btnupload{background-color:#007bff; color:#fff; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;}
+.btnupload{background-color:#0056b3;}
+#message{margin-top:20px;text-align:center;font-size:16px;color:#f14cce;}
+.subtitle{font-size:18px;font-weight:bold;margin:10px 0;text-align:center;color:#09e2ff;}
+.gallery{display:flex;flex-wrap:wrap;justify-content:center;margin-top:20px;}
+.card{background:#fff;border:1px solid #ddd;border-radius:5px;margin:10px;overflow:hidden;width:200px;box-shadow:0 0 10px rgba(0,0,0,0.1);}
